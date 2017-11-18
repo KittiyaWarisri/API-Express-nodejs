@@ -1,0 +1,96 @@
+<%include header %>
+<div class="container-fluid " style="height: 100rem ;
+background: #fff; 
+background: -webkit-linear-gradient(#fff,#FDEDEC,#F5B7B1,#BB8FCE,#884EA0);">
+<div class="row"> 
+<div class="col-6">
+<div  class="text-center" style=" margin-top: 10rem">
+    <h1 >Customer DB list</h1>
+</div>
+<div style="margin-left: 2rem; margin-right: 2rem">
+        <table class="table table-hover"style="">
+                <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% users.forEach( function(user) 
+                            { %>
+                        <tr>
+                            <td id="Name"><%= user.name %></td>
+                            <td id="Age"><%= user.age %></td>
+                            <td id="Email"><%= user.email %></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                
+     
+
+
+        <!-- --------------------------------------- -->
+    </table>
+</div>
+
+<!-- <div class="col-9 offset-3" >
+    <ul  style="margin-top: 3rem ;font-size: 1.5rem">
+    <li id='fullname'></li>
+    <li id='age'></li>
+    <li id='email'></li>
+    </ul>
+</div> -->
+
+</div>
+<!-- --------------------------------------------------------- -->
+<div class="col-6">
+    <div class="text-center" style="margin-top: 10rem">
+        <h1 > Add New Customer</h1>
+    </div>
+
+
+<!-- ------------------------------------------------------- -->
+
+        <div class="col-4 offset-4" style="margin-top: 2rem">
+                    <form class=""method="POST" action="/user" > 
+                        <div class="form-group" style="color: rgb(8, 8, 8)" >
+                            Full Name <br>
+                            <input ttype="text" name="name" id="fullname_input">
+                        </div>
+                        
+                        <div class="form-group" style="color: rgb(2, 2, 2)">
+                            Age 	<br>
+                            <input type="number" name="age" id="age_input">
+                        </div>
+
+                        <div class="form-group" style="color: rgb(10, 10, 10)">
+                            E-mail <br>
+                            <input type="text" name="email" id="email_input">
+                        </div>
+                        
+                        <div>
+                            
+                        </div>
+                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Add">
+                        <br>
+
+                    </form>
+        </div>
+
+    </div>
+    
+    
+
+
+<!-- ------------------------------------------------------- -->
+
+
+
+    </div>
+    
+
+</div>
+
+<hr>
+<%include footer %>
